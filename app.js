@@ -1,5 +1,5 @@
-const findBtn = document.querySelector('.btn-find-сharacters');
-const сharacterContainer = document.querySelector('.сharacter-container');
+const findBtn = document.querySelector('.btn-find-characters');
+const characterContainer = document.querySelector('.character-container');
 
 const changeFavourites = (e, characterId) => {
   //todo: implement changeFavourites function
@@ -13,21 +13,21 @@ const createCharacterNode = ({
   isFavourite = false,
 }) => {
   const container = document.createElement('div');
-  container.classList.add('сharacter-card');
+  container.classList.add('character-card');
 
   const avatar = document.createElement('img');
-  avatar.classList.add('сharacter-avatar');
+  avatar.classList.add('character-avatar');
   avatar.setAttribute('src', imageUrl);
 
   const bodyContainer = document.createElement('div');
   bodyContainer.classList.add('card-body');
 
   const fullNameItem = document.createElement('h4');
-  fullNameItem.classList.add('сharacter-fullname');
+  fullNameItem.classList.add('character-fullname');
   fullNameItem.innerText = `${fullName},`;
 
   const titleItem = document.createElement('h5');
-  titleItem.classList.add('сharacter-title');
+  titleItem.classList.add('character-title');
   titleItem.innerText = title;
 
   const reactionContainer = document.createElement('div');
@@ -57,12 +57,12 @@ const forwardRenderCharactersByFilter = async () => {
   const localData = localStorage.getItem('favourites');
   const favourites = localData ? JSON.parse(localData) : [];
 
-  сharacterContainer.replaceChildren();
-  const сharacterNodes = [];
-  const сharacterNameInput = document.querySelector('.сharacter-input');
-  const сharacters = await getCharacters(сharacterNameInput.value);
-  for (const { id, fullName, imageUrl, title } of сharacters) {
-    сharacterNodes.push(
+  characterContainer.replaceChildren();
+  const characterNodes = [];
+  const characterNameInput = document.querySelector('.character-input');
+  const characters = await getCharacters(characterNameInput.value);
+  for (const { id, fullName, imageUrl, title } of characters) {
+    characterNodes.push(
       createCharacterNode({
         id,
         fullName,
@@ -72,14 +72,14 @@ const forwardRenderCharactersByFilter = async () => {
       })
     );
   }
-  сharacterContainer.append(...сharacterNodes);
+  characterContainer.append(...characterNodes);
 };
 
 findBtn.addEventListener('click', forwardRenderCharactersByFilter);
 
-const getCharacters = async (сharacterNameInput = '') => {
+const getCharacters = async (characterNameInput = '') => {
   const response = await fetch(
-    `https://my-got-api.herokuapp.com/${сharacterNameInput}`
+    `https://my-got-api.herokuapp.com/${characterNameInput}`
   );
   const characters = await response.json();
   return characters;
