@@ -23,14 +23,14 @@ h5 {
   flex-wrap: wrap;
 }
 
-.сharacter-input {
+.character-input {
   width: 70%;
   padding: 0.375rem 0.75rem;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
 }
 
-.btn-find-сharacters {
+.btn-find-characters {
   margin-left: 10px;
   cursor: pointer;
   padding: 0.375rem 0.75rem;
@@ -40,30 +40,30 @@ h5 {
   border-radius: 0.25rem;
 }
 
-.сharacter-container {
+.character-container {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
   margin-top: 25px;
 }
 
-.сharacter-card {
+.character-card {
   display: flex;
   flex-direction: column;
 }
 
-.сharacter-avatar {
+.character-avatar {
   width: 175px;
   height: 175px;
 }
 
-.сharacter-fullname {
+.character-fullname {
   font-size: 17px;
   font-weight: 600;
   line-height: 30px;
 }
 
-.сharacter-title {
+.character-title {
   font-size: 14px;
   font-weight: 500;
   line-height: 15px;
