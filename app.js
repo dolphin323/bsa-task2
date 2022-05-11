@@ -2,7 +2,7 @@ const findBtn = document.querySelector('.btn-find-сharacters');
 const сharacterContainer = document.querySelector('.сharacter-container');
 
 const changeFavourites = (e, characterId) => {
-  //todo: implement changeFavourite function
+  //todo: implement changeFavourites function
 };
 
 const createCharacterNode = ({
